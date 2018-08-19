@@ -14,15 +14,21 @@
 
   <!-- Lecture  4 -->
   <div>
-    <h1>Lecture 4Two - Responding to a click</h1>
+    <h1>Lecture 4 - Responding to a click</h1>
     <p>Responding to a click means real interactivity</p>
     <p>Challenge 1. Select button by id. document.getElementById('myButton');</p>
-    <p id="text">Hell World</p>
+    <p>Now we want to connect JS to this button. use .onclick then a function</p>
+    <p>Challenge 2. alert button clicked. just put alert('button clicked!'); in the function.</p>
+    <p id="textL4">Hello World</p>
+    <p>Challenge 3, change hello world text above to Hello Dom!. Just added document.getElementById('text').innerHTML = "Hello
+      Dom!"; to the function. </p>
 
     <button id="myButton">Change Text</button>
 
     <script>
-      document.getElementById('myButton');
+      document.getElementById('myButton').onclick = function () {
+        document.getElementById('textL4').innerHTML = "Hello Dom!";
+      }
     </script>
 
 
