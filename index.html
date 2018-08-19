@@ -14,13 +14,21 @@
   <div>
     <h1>Lecture Three - Accessing Elements on the page</h1>
     <p>So far we've been just alerting to the screen.</p>
+    <p>it's easy to get an element by id as they are unique.</p>
+    <p>the p below't text has changed on page load. Used following code.</p>
+    <p> document.getElementById("text").innerHTML = "Now there is some content";</p>
+    <p id="text">This was blank.</p>
+    <script>
+      // look for something inside the document then . to go inside.
+      document.getElementById("text").innerHTML = "Now there is some content";
+    </script>
   </div>
 
   <!-- Lecture 2 -->
   <div>
     <h1>Lecture Two - Internal JS</h1>
-    <p>Add Js using script tags in the body, right at the end of the document above closing body tag. It can then run once the
-      whole page has loaded, not interrupting page load.</p>
+    <p>Add Js using script tags in the body, right at the end of the document above closing body tag. It can then run once
+      the whole page has loaded, not interrupting page load.</p>
     <p>Challenge 1. Just alert('Page loaded') when you refresh.</p>
     <p>So added alert('The Page has loaded'); between the script tags.</p>
     <h3>Single or double quotes?</h3>
@@ -36,14 +44,6 @@
       <button onclick="alert('Hi Dom')">Click Me!</button>
     </p>
   </div>
-  <div>
-    <h1>Example Domain</h1>
-    <p>This domain is established to be used for illustrative examples in documents. You may use this domain in examples without
-      prior coordination or asking for permission.</p>
-    <p>
-      <a href="http://www.iana.org/domains/example">More information...</a>
-    </p>
-  </div>
+  
 </body>
-
 </html>
