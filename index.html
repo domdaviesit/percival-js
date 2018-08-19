@@ -11,6 +11,48 @@
 </head>
 
 <body>
+  <!-- Lecture  5 -->
+  <div>
+    <h1>Lecture 5 - Changing Website Content</h1>
+    <p>We can add content to existing content, make elements appear etc...</p>
+
+    <h2>Appending Text</h2>
+    <p>We are appending the word awesome to the phase JavaScript is ... when you click the button</p>
+    <p>Get the button to do this onclick. Grab the paragraph, set it to the paragraph plus the phrase.</p>
+    <p id="secondParagraph" class="paraColor">JavaScript is ...</p>
+    <p id="thirdParagraph" class="paraColor">JavaScript is ...</p>
+    <button id="myButton1">Append Text</button>
+    <button id="myButton2">Prepend Text</button>
+
+    <p>Challenge. Prepend I think to the phrase.</p>
+
+    <p>Challenge. Make content appear from nowhere by clicking a button. We did easy example with text but you can add html
+      to the code.</p>
+    <button id="createParagraph">Create Text</button>
+
+    <p id="emptyParagraph" class="paraColor">
+
+    </p>
+    <script>
+      //get the btn
+      document.getElementById('myButton1').onclick = function () {
+        // get paragraph 2 and set it equal to + awesome!
+        document.getElementById('secondParagraph').innerHTML = document.getElementById('secondParagraph').innerHTML + " awesome!";
+      }
+
+      //get the btn
+      document.getElementById('myButton2').onclick = function () {
+        // get paragraph 2 and set it equal to + awesome!
+        document.getElementById('thirdParagraph').innerHTML = "I think " + document.getElementById('thirdParagraph').innerHTML + " awesome!";
+      }
+
+      //get the btn
+      document.getElementById('createParagraph').onclick = function () {
+        // show text
+        document.getElementById('emptyParagraph').innerHTML = "<h1>Hi There!</h1>"
+      }
+    </script>
+  </div>
 
   <!-- Lecture  4 -->
   <div>
@@ -19,7 +61,7 @@
     <p>Challenge 1. Select button by id. document.getElementById('myButton');</p>
     <p>Now we want to connect JS to this button. use .onclick then a function</p>
     <p>Challenge 2. alert button clicked. just put alert('button clicked!'); in the function.</p>
-    <p id="textL4">Hello World</p>
+    <p id="textL4" class="paraColor">Hello World</p>
     <p>Challenge 3, change hello world text above to Hello Dom!. Just added document.getElementById('text').innerHTML = "Hello
       Dom!"; to the function. </p>
 
@@ -30,11 +72,11 @@
         document.getElementById('textL4').innerHTML = "Hello Dom!";
       }
     </script>
-
-
   </div>
+
+  <!-- Lecture 3 -->
   <div>
-    <h1>Lecture Three - Accessing Elements on the page</h1>
+    <h1>Lecture 3 - Accessing Elements on the page</h1>
     <p>So far we've been just alerting to the screen.</p>
     <p>it's easy to get an element by id as they are unique.</p>
     <p>the p below't text has changed on page load. Used following code.</p>
@@ -48,7 +90,7 @@
 
   <!-- Lecture 2 -->
   <div>
-    <h1>Lecture Two - Internal JS</h1>
+    <h1>Lecture 2 - Internal JS</h1>
     <p>Add Js using script tags in the body, right at the end of the document above closing body tag. It can then run once
       the whole page has loaded, not interrupting page load.</p>
     <p>Challenge 1. Just alert('Page loaded') when you refresh.</p>
@@ -59,9 +101,12 @@
       alert('The Page has loaded');
     </script> -->
   </div>
+
+  <!-- Lecture 1 -->
   <div>
-    <h1>Lecture One - Internal JS</h1>
-    <p>This is just an example don't use JS like this. We add onclick="alert('Hi Dom')" to the button tag to alert Hi Dom</p>
+    <h1>Lecture One - Inline JS</h1>
+    <p>This is just an example don't use JS like this -- NOT RECOMMENDED. We add onclick="alert('Hi Dom')" to the button
+      tag to alert Hi Dom</p>
     <p>
       <button onclick="alert('Hi Dom')">Click Me!</button>
     </p>

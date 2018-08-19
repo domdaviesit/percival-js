@@ -12,7 +12,7 @@ body {
 }
 
 div {
-  width: 600px;
+  width: 900px;
   margin: 5em auto;
   padding: 50px;
   background-color: #fff;
@@ -23,6 +23,10 @@ a:link,
 a:visited {
   color: #38488f;
   text-decoration: none;
+}
+
+.paraColor {
+  background-color: pink;
 }
 
 @media (max-width: 700px) {
