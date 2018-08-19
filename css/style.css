@@ -29,6 +29,25 @@ a:visited {
   background-color: pink;
 }
 
+.circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#red {
+  background-color: red;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#blue {
+  background-color: blue;
+}
+
 @media (max-width: 700px) {
   body {
     background-color: #fff;

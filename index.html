@@ -11,7 +11,72 @@
 </head>
 
 <body>
-  <!-- Lecture  5 -->
+  <!-- Lecture  7 -->
+  <div>
+    <h1>Lecture 7 - Challenge - disappearing circles</h1>
+
+    <p>Create 3 large circles (red,blue, yellow) that disappear when you click on them.</p>
+    <p>After completing exercise I can see my id names could do with being more descriptive like red-circle not just red.</p>
+
+    <div class="circles">
+      <div class="circle" id="red"></div>
+      <div class="circle" id="yellow"></div>
+      <div class="circle" id="blue"></div>
+    </div>
+
+    <script>
+      document.getElementById('red').onclick = function () {
+        document.getElementById('red').style.display = "none";
+      }
+
+      document.getElementById('yellow').onclick = function () {
+        document.getElementById('yellow').style.display = "none";
+      }
+
+      document.getElementById('blue').onclick = function () {
+        document.getElementById('blue').style.display = "none";
+      }        
+    </script>
+
+  </div>
+
+  <!-- Lecture  6 -->
+  <div>
+    <h1>Lecture 6 - Manipulating Styles with JS</h1>
+
+    <p id="moreText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad ipsam distinctio quidem facere soluta?</p>
+    <button id="styleText">Style Text</button>
+
+    <script>
+      document.getElementById('styleText').onclick = function () {
+        // document.getElementById('moreText').style.color = "red";
+        // document.getElementById('moreText').style.fontSize = "20px";
+        // gets removed from flow of the page
+        document.getElementById('moreText').style.display = "none";
+
+
+      }
+
+    </script>
+
+    <!-- <p>Responding to a click means real interactivity</p>
+    <p>Challenge 1. Select button by id. document.getElementById('myButton');</p>
+    <p>Now we want to connect JS to this button. use .onclick then a function</p>
+    <p>Challenge 2. alert button clicked. just put alert('button clicked!'); in the function.</p>
+    <p id="textL4" class="paraColor">Hello World</p>
+    <p>Challenge 3, change hello world text above to Hello Dom!. Just added document.getElementById('text').innerHTML = "Hello
+      Dom!"; to the function. </p>
+
+    <button id="myButton">Change Text</button>
+
+    <script>
+      document.getElementById('myButton').onclick = function () {
+        document.getElementById('textL4').innerHTML = "Hello Dom!";
+      }
+    </script> -->
+  </div>
+
+  <!-- Lecture 5 -->
   <div>
     <h1>Lecture 5 - Changing Website Content</h1>
     <p>We can add content to existing content, make elements appear etc...</p>
