@@ -11,6 +11,31 @@
 </head>
 
 <body>
+  <!-- Lecture  8 -->
+  <div>
+    <h1>Variables</h1>
+    <p>Letters that represent certain values, usually numbers? A var isn't fixed you can change it's value later (after it
+      was defined). Non numerical variables eg name, appear in quotes.</p>
+    <p>Challenge. Type text in box, press btn then text appears in the paragraph underneath.</p>
+    <input type="text" id="textInput">
+    <button id="textChanger">Change the Text</button>
+    <p id="newText">This is some Text.</p>
+    <script>
+      // get the button
+      document.getElementById('textChanger').onclick = function () {
+        // set up a var and set it to an empty var
+        var textEntered = " ";
+        // get the value of what user types in  
+        textEntered = document.getElementById("textInput").value;
+
+        // change paragraph to what user has typed in.
+        document.getElementById('newText').innerHTML = textEntered;
+
+      }
+    </script>
+  </div>
+
+
   <!-- Lecture  7 -->
   <div>
     <h1>Lecture 7 - Challenge - disappearing circles</h1>
