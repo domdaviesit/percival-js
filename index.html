@@ -11,6 +11,52 @@
 </head>
 
 <body>
+
+  <!-- Lecture  10 -->
+  <div>
+    <h1>Lecture 10. If Statements</h1>
+    <p>Allows code to do different things depending on different situations.</p>
+    <p>== you are testing if 2 things are the same. not assigning with single =.</p>
+    <p>If Statements are used a lot at login to test if user id/passwords/ emails are correct or will give an error msg.</p>
+
+    <h3>Challenge</h3>
+    <p>What's the magic word? have a user input and a btn to check if word is correct. Alert right/wrong.</p>
+    <br>
+    <h3>What is the magic word?</h3>
+    <input type="text" id="magicWord">
+    <button id="checkMagicWord">Enter</button>
+
+    <script>
+
+      document.getElementById('checkMagicWord').onclick = function () {
+
+        var magicWordEntered = document.getElementById('magicWord').value;
+        // alert(magicWordEntered);
+        var magicWord = "Disney";
+
+        if (magicWordEntered == magicWord) {
+          alert("You're Right!")
+        } else {
+          alert('Sorry, Wrong');
+        }
+
+      }
+
+      // var x = 2;
+
+      // if (x == 1) {
+      //   alert("x is one");
+      // } else {
+        // if not true
+      //   alert("x isn't one");
+      // }
+
+      // alert(x);
+    </script>
+  </div>
+
+
+
   <!-- Lecture  9 -->
   <div>
     <h1>Lecture 9. Arrays</h1>
@@ -29,20 +75,20 @@
     <p>myArray.splice(1, 0, "Salad"); 1st is postion, 2nd delete none, 3rd is name of new item.</p>
 
     <script>
-      var myArray = new Array();
+      // var myArray = new Array();
 
       // fill the array with some values
 
-      myArray[0] = "Pizza";
-      myArray[1] = "Chocolate";
-      myArray.push("Burgers");
+      // myArray[0] = "Pizza";
+      // myArray[1] = "Chocolate";
+      // myArray.push("Burgers");
       // delete 1 item starting at zero
       // variable 1 is position, 2nd is number of items to delete
       // myArray.splice(0, 2);
-      myArray.splice(2, 1, "Salad");
+      // myArray.splice(2, 1, "Salad");
 
       // alert(myArray[0]);
-      console.log(myArray);
+      // console.log(myArray);
     </script>
   </div>
 
