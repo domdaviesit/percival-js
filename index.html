@@ -11,9 +11,45 @@
 </head>
 
 <body>
+  <!-- Lecture  9 -->
+  <div>
+    <h1>Lecture 9. Arrays</h1>
+    <p>Allow us to store a number of different values in 1 object.</p>
+    <p>Use keyword var to create array</p>
+    <p> var myArray = new Array();</p>
+    <p>Can view a whole array in console.log.</p>
+    <p>Array(2)0: "Pizza"1: "Chocolate"length: 2__proto__: Array(0)</p>
+    <p>In an app like twitter, there is a array called tweets [] with empty array. Most apps will need a way of storing lists
+      of data.</p>
+    <h3>Push an item onto an array like this. myArray.push("Burgers");</h3>
+    <h3>Remove an item.</h3>
+    <p>delete 1 item starting at zero myArray.splice(0, 1);</p>
+    <p>variable 1 is position (where to start deleting from), 2nd is number of items to delete</p>
+    <h3>Add items in to array</h3>
+    <p>myArray.splice(1, 0, "Salad"); 1st is postion, 2nd delete none, 3rd is name of new item.</p>
+
+    <script>
+      var myArray = new Array();
+
+      // fill the array with some values
+
+      myArray[0] = "Pizza";
+      myArray[1] = "Chocolate";
+      myArray.push("Burgers");
+      // delete 1 item starting at zero
+      // variable 1 is position, 2nd is number of items to delete
+      // myArray.splice(0, 2);
+      myArray.splice(2, 1, "Salad");
+
+      // alert(myArray[0]);
+      console.log(myArray);
+    </script>
+  </div>
+
+
   <!-- Lecture  8 -->
   <div>
-    <h1>Variables</h1>
+    <h1>Lecture 8. Variables</h1>
     <p>Letters that represent certain values, usually numbers? A var isn't fixed you can change it's value later (after it
       was defined). Non numerical variables eg name, appear in quotes.</p>
     <p>Challenge. Type text in box, press btn then text appears in the paragraph underneath.</p>
