@@ -16,31 +16,40 @@
     <h1>Lecture 11. How many fingers? Game Challenge</h1>
     <p></p>
     <h3>The new bit... generating random numbers.</h3>
-
-
+    <p>How many fingers am I holding up?</p>
+    <p>
+      <input id="guess" type="text">
+      <button id="checkGuess">Guess!</button>
+    </p>
     <script>
+      //get btn
+      document.getElementById('checkGuess').onclick = function () {
+
+        var guessedNumber = document.getElementById('guess').value;
+        var randomNumber = Math.floor((Math.random() * 5) + 1);
+
+        if (guessedNumber == randomNumber) {
+          alert("You did it! Great");
+        } else {
+          alert("sorry, try again! The number was " + randomNumber);
+        }
+      }
     </script>
   </div>
-
-
   <!-- Lecture  10 -->
   <div>
     <h1>Lecture 10. If Statements</h1>
     <p>Allows code to do different things depending on different situations.</p>
     <p>== you are testing if 2 things are the same. not assigning with single =.</p>
     <p>If Statements are used a lot at login to test if user id/passwords/ emails are correct or will give an error msg.</p>
-
     <h3>Challenge</h3>
     <p>What's the magic word? have a user input and a btn to check if word is correct. Alert right/wrong.</p>
     <br>
     <h3>What is the magic word?</h3>
     <input type="text" id="magicWord">
     <button id="checkMagicWord">Enter</button>
-
     <script>
-
       document.getElementById('checkMagicWord').onclick = function () {
-
         var magicWordEntered = document.getElementById('magicWord').value;
         // alert(magicWordEntered);
         var magicWord = "Disney";
