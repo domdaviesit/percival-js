@@ -11,6 +11,32 @@
 </head>
 
 <body>
+
+  <!-- Lecture  11 Practise -->
+  <div>
+    <h1>Lecture 11 Practise. How many fingers? Game Challenge</h1>
+    <p></p>
+    <h3>The new bit... generating random numbers.</h3>
+    <p>How many fingers am I holding up?</p>
+    <p>
+      <input id="guess1" type="text">
+      <button id="checkGuess1">Guess!</button>
+    </p>
+    <script>
+      document.getElementById('checkGuess1').onclick = function () {
+        var guess = document.getElementById('guess1').value;
+        var answer = Math.floor((Math.random() * 5) + 1);
+
+        if (guess == answer) {
+          alert("Wow, you got it right!");
+        } else {
+          alert("Sorry, try again the answer is " + answer);
+        }
+
+      }
+
+    </script>
+  </div>
   <!-- Lecture  11 -->
   <div>
     <h1>Lecture 11. How many fingers? Game Challenge</h1>
