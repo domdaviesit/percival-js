@@ -11,12 +11,51 @@
 </head>
 
 <body>
+  <!-- Lecture  12 Loops -->
+  <div>
+    <h1>Lecture 12 Loops.</h1>
+    <p>Allow you to run certain lines of code again and again doing something slightly different each time.</p>
+    <p>we use the for command with
+      <ol>
+        <li>A counter variable, which counts each time through the loop. var i = 0;</li>
+        <li>How many times you do the loop. i &lt; 5. will keep going as long as i is less than 5.</li>
+        <li>what to do to i. i++</li>
+      </ol>
+    </p>
+    <p>Loops work really well with arrays.</p>
+    <h3>Challenge. 1. alert each tweet in the array. 2. display each on a separate line.</h3>
+    <div id="tweetDiv">
+
+    </div>
+
+    <script>
+      // up by 1 each time
+      // for (var i = 0; i < 5; i++) {
+      //   alert(i);
+      // }
+
+      // down by 1 each time
+      // for (var i = 5; i > 0; i--) {
+      //   alert(i);
+      // }
+      var tweetString = "";
+      var tweets = ["Hi everyone!", "I love coding", "JavaScript is awesome"];
+
+      // for (var i = 0; i < 3; i++) {
+      //better way 
+      for (var i = 0; i < tweets.length; i++) {
+        // alert(tweets[i]);
+        tweetString = tweetString + "<p>" + tweets[i] + "</p>"
+      }
+      document.getElementById('tweetDiv').innerHTML = tweetString;
+
+    </script>
+  </div>
 
   <!-- Lecture  11 Practise -->
   <div>
     <h1>Lecture 11 Practise. How many fingers? Game Challenge</h1>
     <p></p>
-    <h3>The new bit... generating random numbers.</h3>
     <p>How many fingers am I holding up?</p>
     <p>
       <input id="guess1" type="text">
@@ -197,7 +236,8 @@
   <div>
     <h1>Lecture 6 - Manipulating Styles with JS</h1>
 
-    <p id="moreText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad ipsam distinctio quidem facere soluta?</p>
+    <p id="moreText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad ipsam distinctio quidem facere soluta?
+    </p>
     <button id="styleText">Style Text</button>
 
     <script>
