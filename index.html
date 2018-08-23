@@ -17,16 +17,50 @@
     <p>While Loops are really popular. we then changed the for loop into a while loop</p>
 
     <p>Define counter var first before the loop starts. then while (condition) { code goes here; counter at the end}</p>
+    <p>Must be careful with loops that you don't crash the browser. in the challenge we used select tag to avoid people putting in numbers over 5 as the computer is set to only guess 5 and under.</p>
 
     <h4>Challenge. Computer guesses how many fingers we are holding up.</h4>
+
+    <p>How many fingers are you holding up?</p>
+    <p><select id="myNumber">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button id="guess">Guess!</button>
+    </p>
+
 
 
 
     <script>
+      // grab the btn
+      document.getElementById('guess').onclick = function () {
+        // get input and store it
+        var myNumber = document.getElementById('myNumber').value;
+        // alert(myNumber); (test)
+        var gotIt = false;
+        // loop
+        var numberOfGuesses = 1;
 
+        while (gotIt == false) {
+          var guess = Math.random();
+          guess = guess * 6;
+
+          guess = Math.floor(guess);
+
+          if (guess == myNumber) {
+            gotIt = true;
+            alert("Got It! It was a " + guess + ". It took me " + numberOfGuesses + " guesses");
+          } else {
+            numberOfGuesses++;
+          }
+        }
+      }
 
     </script>
-
 
     <div id="tweetDiv1">
       <!-- display each tweet on a separate line. -->
