@@ -11,121 +11,130 @@
 </head>
 
 <body>
-  <!-- Lecture  12 Loops -->
+  <!-- Lecture  12 For Loops Review-->
   <div>
-    <h1>Lecture 12 Loops.</h1>
-    <p>Allow you to run certain lines of code again and again doing something slightly different each time.</p>
-    <p>we use the for command with
-      <ol>
-        <li>A counter variable, which counts each time through the loop. var i = 0;</li>
-        <li>How many times you do the loop. i &lt; 5. will keep going as long as i is less than 5.</li>
-        <li>what to do to i. i++</li>
-      </ol>
-    </p>
-    <p>Loops work really well with arrays.</p>
-    <h3>Challenge. 1. alert each tweet in the array. 2. display each on a separate line.</h3>
-    <div id="tweetDiv">
+    <h1>Lecture 12 For Loops Review</h1>
+    <p>Cycle through arrays</p>
 
+    <script>
+      
+    </script>
+  </div>
+    <!-- Lecture  12 For Loops -->
+    <div>
+      <h1>Lecture 12 For Loops.</h1>
+      <p>Allow you to run certain lines of code again and again doing something slightly different each time.</p>
+      <p>we use the for command with
+        <ol>
+          <li>A counter variable, which counts each time through the loop. var i = 0;</li>
+          <li>How many times you do the loop. i &lt; 5. will keep going as long as i is less than 5.</li>
+          <li>what to do to i. i++</li>
+        </ol>
+      </p>
+      <p>Loops work really well with arrays.</p>
+      <h3>Challenge. 1. alert each tweet in the array. 2. display each on a separate line.</h3>
+      <div id="tweetDiv">
+
+      </div>
+
+      <script>
+        // up by 1 each time
+        // for (var i = 0; i < 5; i++) {
+        //   alert(i);
+        // }
+
+        // down by 1 each time
+        // for (var i = 5; i > 0; i--) {
+        //   alert(i);
+        // }
+        var tweetString = "";
+        var tweets = ["Hi everyone!", "I love coding", "JavaScript is awesome"];
+
+        // for (var i = 0; i < 3; i++) {
+        //better way 
+        for (var i = 0; i < tweets.length; i++) {
+          // alert(tweets[i]);
+          tweetString = tweetString + "<p>" + tweets[i] + "</p>"
+        }
+        document.getElementById('tweetDiv').innerHTML = tweetString;
+
+      </script>
     </div>
 
-    <script>
-      // up by 1 each time
-      // for (var i = 0; i < 5; i++) {
-      //   alert(i);
-      // }
+    <!-- Lecture  11 Practise -->
+    <div>
+      <h1>Lecture 11 Practise. How many fingers? Game Challenge</h1>
+      <p></p>
+      <p>How many fingers am I holding up?</p>
+      <p>
+        <input id="guess1" type="text">
+        <button id="checkGuess1">Guess!</button>
+      </p>
+      <script>
+        document.getElementById('checkGuess1').onclick = function () {
+          var guess = document.getElementById('guess1').value;
+          var answer = Math.floor((Math.random() * 5) + 1);
 
-      // down by 1 each time
-      // for (var i = 5; i > 0; i--) {
-      //   alert(i);
-      // }
-      var tweetString = "";
-      var tweets = ["Hi everyone!", "I love coding", "JavaScript is awesome"];
+          if (guess == answer) {
+            alert("Wow, you got it right!");
+          } else {
+            alert("Sorry, try again the answer is " + answer);
+          }
 
-      // for (var i = 0; i < 3; i++) {
-      //better way 
-      for (var i = 0; i < tweets.length; i++) {
-        // alert(tweets[i]);
-        tweetString = tweetString + "<p>" + tweets[i] + "</p>"
-      }
-      document.getElementById('tweetDiv').innerHTML = tweetString;
-
-    </script>
-  </div>
-
-  <!-- Lecture  11 Practise -->
-  <div>
-    <h1>Lecture 11 Practise. How many fingers? Game Challenge</h1>
-    <p></p>
-    <p>How many fingers am I holding up?</p>
-    <p>
-      <input id="guess1" type="text">
-      <button id="checkGuess1">Guess!</button>
-    </p>
-    <script>
-      document.getElementById('checkGuess1').onclick = function () {
-        var guess = document.getElementById('guess1').value;
-        var answer = Math.floor((Math.random() * 5) + 1);
-
-        if (guess == answer) {
-          alert("Wow, you got it right!");
-        } else {
-          alert("Sorry, try again the answer is " + answer);
         }
 
-      }
+      </script>
+    </div>
+    <!-- Lecture  11 -->
+    <div>
+      <h1>Lecture 11. How many fingers? Game Challenge</h1>
+      <p></p>
+      <h3>The new bit... generating random numbers.</h3>
+      <p>How many fingers am I holding up?</p>
+      <p>
+        <input id="guess" type="text">
+        <button id="checkGuess">Guess!</button>
+      </p>
+      <script>
+        //get btn
+        document.getElementById('checkGuess').onclick = function () {
 
-    </script>
-  </div>
-  <!-- Lecture  11 -->
-  <div>
-    <h1>Lecture 11. How many fingers? Game Challenge</h1>
-    <p></p>
-    <h3>The new bit... generating random numbers.</h3>
-    <p>How many fingers am I holding up?</p>
-    <p>
-      <input id="guess" type="text">
-      <button id="checkGuess">Guess!</button>
-    </p>
-    <script>
-      //get btn
-      document.getElementById('checkGuess').onclick = function () {
+          var guessedNumber = document.getElementById('guess').value;
+          var randomNumber = Math.floor((Math.random() * 5) + 1);
 
-        var guessedNumber = document.getElementById('guess').value;
-        var randomNumber = Math.floor((Math.random() * 5) + 1);
-
-        if (guessedNumber == randomNumber) {
-          alert("You did it! Great");
-        } else {
-          alert("sorry, try again! The number was " + randomNumber);
+          if (guessedNumber == randomNumber) {
+            alert("You did it! Great");
+          } else {
+            alert("sorry, try again! The number was " + randomNumber);
+          }
         }
-      }
-    </script>
-  </div>
-  <!-- Lecture  10 -->
-  <div>
-    <h1>Lecture 10. If Statements</h1>
-    <p>Allows code to do different things depending on different situations.</p>
-    <p>== you are testing if 2 things are the same. not assigning with single =.</p>
-    <p>If Statements are used a lot at login to test if user id/passwords/ emails are correct or will give an error msg.</p>
-    <h3>Challenge</h3>
-    <p>What's the magic word? have a user input and a btn to check if word is correct. Alert right/wrong.</p>
-    <br>
-    <h3>What is the magic word?</h3>
-    <input type="text" id="magicWord">
-    <button id="checkMagicWord">Enter</button>
-    <script>
-      document.getElementById('checkMagicWord').onclick = function () {
-        var magicWordEntered = document.getElementById('magicWord').value;
-        // alert(magicWordEntered);
-        var magicWord = "Disney";
+      </script>
+    </div>
+    <!-- Lecture  10 -->
+    <div>
+      <h1>Lecture 10. If Statements</h1>
+      <p>Allows code to do different things depending on different situations.</p>
+      <p>== you are testing if 2 things are the same. not assigning with single =.</p>
+      <p>If Statements are used a lot at login to test if user id/passwords/ emails are correct or will give an error msg.</p>
+      <h3>Challenge</h3>
+      <p>What's the magic word? have a user input and a btn to check if word is correct. Alert right/wrong.</p>
+      <br>
+      <h3>What is the magic word?</h3>
+      <input type="text" id="magicWord">
+      <button id="checkMagicWord">Enter</button>
+      <script>
+        document.getElementById('checkMagicWord').onclick = function () {
+          var magicWordEntered = document.getElementById('magicWord').value;
+          // alert(magicWordEntered);
+          var magicWord = "Disney";
 
-        if (magicWordEntered == magicWord) {
-          alert("You're Right!")
-        } else {
-          alert('Sorry, Wrong');
+          if (magicWordEntered == magicWord) {
+            alert("You're Right!")
+          } else {
+            alert('Sorry, Wrong');
+          }
+
         }
-
-      }
 
       // var x = 2;
 
@@ -137,29 +146,29 @@
       // }
 
       // alert(x);
-    </script>
-  </div>
+      </script>
+    </div>
 
 
 
-  <!-- Lecture  9 -->
-  <div>
-    <h1>Lecture 9. Arrays</h1>
-    <p>Allow us to store a number of different values in 1 object.</p>
-    <p>Use keyword var to create array</p>
-    <p> var myArray = new Array();</p>
-    <p>Can view a whole array in console.log.</p>
-    <p>Array(2)0: "Pizza"1: "Chocolate"length: 2__proto__: Array(0)</p>
-    <p>In an app like twitter, there is a array called tweets [] with empty array. Most apps will need a way of storing lists
-      of data.</p>
-    <h3>Push an item onto an array like this. myArray.push("Burgers");</h3>
-    <h3>Remove an item.</h3>
-    <p>delete 1 item starting at zero myArray.splice(0, 1);</p>
-    <p>variable 1 is position (where to start deleting from), 2nd is number of items to delete</p>
-    <h3>Add items in to array</h3>
-    <p>myArray.splice(1, 0, "Salad"); 1st is postion, 2nd delete none, 3rd is name of new item.</p>
+    <!-- Lecture  9 -->
+    <div>
+      <h1>Lecture 9. Arrays</h1>
+      <p>Allow us to store a number of different values in 1 object.</p>
+      <p>Use keyword var to create array</p>
+      <p> var myArray = new Array();</p>
+      <p>Can view a whole array in console.log.</p>
+      <p>Array(2)0: "Pizza"1: "Chocolate"length: 2__proto__: Array(0)</p>
+      <p>In an app like twitter, there is a array called tweets [] with empty array. Most apps will need a way of storing
+        lists of data.</p>
+      <h3>Push an item onto an array like this. myArray.push("Burgers");</h3>
+      <h3>Remove an item.</h3>
+      <p>delete 1 item starting at zero myArray.splice(0, 1);</p>
+      <p>variable 1 is position (where to start deleting from), 2nd is number of items to delete</p>
+      <h3>Add items in to array</h3>
+      <p>myArray.splice(1, 0, "Salad"); 1st is postion, 2nd delete none, 3rd is name of new item.</p>
 
-    <script>
+      <script>
       // var myArray = new Array();
 
       // fill the array with some values
@@ -174,85 +183,86 @@
 
       // alert(myArray[0]);
       // console.log(myArray);
-    </script>
-  </div>
-
-
-  <!-- Lecture  8 -->
-  <div>
-    <h1>Lecture 8. Variables</h1>
-    <p>Letters that represent certain values, usually numbers? A var isn't fixed you can change it's value later (after it
-      was defined). Non numerical variables eg name, appear in quotes.</p>
-    <p>Challenge. Type text in box, press btn then text appears in the paragraph underneath.</p>
-    <input type="text" id="textInput">
-    <button id="textChanger">Change the Text</button>
-    <p id="newText">This is some Text.</p>
-    <script>
-      // get the button
-      document.getElementById('textChanger').onclick = function () {
-        // set up a var and set it to an empty var
-        var textEntered = " ";
-        // get the value of what user types in  
-        textEntered = document.getElementById("textInput").value;
-
-        // change paragraph to what user has typed in.
-        document.getElementById('newText').innerHTML = textEntered;
-
-      }
-    </script>
-  </div>
-
-
-  <!-- Lecture  7 -->
-  <div>
-    <h1>Lecture 7 - Challenge - disappearing circles</h1>
-
-    <p>Create 3 large circles (red,blue, yellow) that disappear when you click on them.</p>
-    <p>After completing exercise I can see my id names could do with being more descriptive like red-circle not just red.</p>
-
-    <div class="circles">
-      <div class="circle" id="red"></div>
-      <div class="circle" id="yellow"></div>
-      <div class="circle" id="blue"></div>
+      </script>
     </div>
 
-    <script>
-      document.getElementById('red').onclick = function () {
-        document.getElementById('red').style.display = "none";
-      }
 
-      document.getElementById('yellow').onclick = function () {
-        document.getElementById('yellow').style.display = "none";
-      }
+    <!-- Lecture  8 -->
+    <div>
+      <h1>Lecture 8. Variables</h1>
+      <p>Letters that represent certain values, usually numbers? A var isn't fixed you can change it's value later (after
+        it was defined). Non numerical variables eg name, appear in quotes.</p>
+      <p>Challenge. Type text in box, press btn then text appears in the paragraph underneath.</p>
+      <input type="text" id="textInput">
+      <button id="textChanger">Change the Text</button>
+      <p id="newText">This is some Text.</p>
+      <script>
+        // get the button
+        document.getElementById('textChanger').onclick = function () {
+          // set up a var and set it to an empty var
+          var textEntered = " ";
+          // get the value of what user types in  
+          textEntered = document.getElementById("textInput").value;
 
-      document.getElementById('blue').onclick = function () {
-        document.getElementById('blue').style.display = "none";
-      }        
-    </script>
+          // change paragraph to what user has typed in.
+          document.getElementById('newText').innerHTML = textEntered;
 
-  </div>
-
-  <!-- Lecture  6 -->
-  <div>
-    <h1>Lecture 6 - Manipulating Styles with JS</h1>
-
-    <p id="moreText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad ipsam distinctio quidem facere soluta?
-    </p>
-    <button id="styleText">Style Text</button>
-
-    <script>
-      document.getElementById('styleText').onclick = function () {
-        // document.getElementById('moreText').style.color = "red";
-        // document.getElementById('moreText').style.fontSize = "20px";
-        // gets removed from flow of the page
-        document.getElementById('moreText').style.display = "none";
+        }
+      </script>
+    </div>
 
 
-      }
+    <!-- Lecture  7 -->
+    <div>
+      <h1>Lecture 7 - Challenge - disappearing circles</h1>
 
-    </script>
+      <p>Create 3 large circles (red,blue, yellow) that disappear when you click on them.</p>
+      <p>After completing exercise I can see my id names could do with being more descriptive like red-circle not just red.</p>
 
-    <!-- <p>Responding to a click means real interactivity</p>
+      <div class="circles">
+        <div class="circle" id="red"></div>
+        <div class="circle" id="yellow"></div>
+        <div class="circle" id="blue"></div>
+      </div>
+
+      <script>
+        document.getElementById('red').onclick = function () {
+          document.getElementById('red').style.display = "none";
+        }
+
+        document.getElementById('yellow').onclick = function () {
+          document.getElementById('yellow').style.display = "none";
+        }
+
+        document.getElementById('blue').onclick = function () {
+          document.getElementById('blue').style.display = "none";
+        }        
+      </script>
+
+    </div>
+
+    <!-- Lecture  6 -->
+    <div>
+      <h1>Lecture 6 - Manipulating Styles with JS</h1>
+
+      <p id="moreText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad ipsam distinctio quidem facere
+        soluta?
+      </p>
+      <button id="styleText">Style Text</button>
+
+      <script>
+        document.getElementById('styleText').onclick = function () {
+          // document.getElementById('moreText').style.color = "red";
+          // document.getElementById('moreText').style.fontSize = "20px";
+          // gets removed from flow of the page
+          document.getElementById('moreText').style.display = "none";
+
+
+        }
+
+      </script>
+
+      <!-- <p>Responding to a click means real interactivity</p>
     <p>Challenge 1. Select button by id. document.getElementById('myButton');</p>
     <p>Now we want to connect JS to this button. use .onclick then a function</p>
     <p>Challenge 2. alert button clicked. just put alert('button clicked!'); in the function.</p>
@@ -267,108 +277,108 @@
         document.getElementById('textL4').innerHTML = "Hello Dom!";
       }
     </script> -->
-  </div>
+    </div>
 
-  <!-- Lecture 5 -->
-  <div>
-    <h1>Lecture 5 - Changing Website Content</h1>
-    <p>We can add content to existing content, make elements appear etc...</p>
+    <!-- Lecture 5 -->
+    <div>
+      <h1>Lecture 5 - Changing Website Content</h1>
+      <p>We can add content to existing content, make elements appear etc...</p>
 
-    <h2>Appending Text</h2>
-    <p>We are appending the word awesome to the phase JavaScript is ... when you click the button</p>
-    <p>Get the button to do this onclick. Grab the paragraph, set it to the paragraph plus the phrase.</p>
-    <p id="secondParagraph" class="paraColor">JavaScript is ...</p>
-    <p id="thirdParagraph" class="paraColor">JavaScript is ...</p>
-    <button id="myButton1">Append Text</button>
-    <button id="myButton2">Prepend Text</button>
+      <h2>Appending Text</h2>
+      <p>We are appending the word awesome to the phase JavaScript is ... when you click the button</p>
+      <p>Get the button to do this onclick. Grab the paragraph, set it to the paragraph plus the phrase.</p>
+      <p id="secondParagraph" class="paraColor">JavaScript is ...</p>
+      <p id="thirdParagraph" class="paraColor">JavaScript is ...</p>
+      <button id="myButton1">Append Text</button>
+      <button id="myButton2">Prepend Text</button>
 
-    <p>Challenge. Prepend I think to the phrase.</p>
+      <p>Challenge. Prepend I think to the phrase.</p>
 
-    <p>Challenge. Make content appear from nowhere by clicking a button. We did easy example with text but you can add html
-      to the code.</p>
-    <button id="createParagraph">Create Text</button>
+      <p>Challenge. Make content appear from nowhere by clicking a button. We did easy example with text but you can add
+        html to the code.</p>
+      <button id="createParagraph">Create Text</button>
 
-    <p id="emptyParagraph" class="paraColor">
+      <p id="emptyParagraph" class="paraColor">
 
-    </p>
-    <script>
-      //get the btn
-      document.getElementById('myButton1').onclick = function () {
-        // get paragraph 2 and set it equal to + awesome!
-        document.getElementById('secondParagraph').innerHTML = document.getElementById('secondParagraph').innerHTML + " awesome!";
-      }
+      </p>
+      <script>
+        //get the btn
+        document.getElementById('myButton1').onclick = function () {
+          // get paragraph 2 and set it equal to + awesome!
+          document.getElementById('secondParagraph').innerHTML = document.getElementById('secondParagraph').innerHTML + " awesome!";
+        }
 
-      //get the btn
-      document.getElementById('myButton2').onclick = function () {
-        // get paragraph 2 and set it equal to + awesome!
-        document.getElementById('thirdParagraph').innerHTML = "I think " + document.getElementById('thirdParagraph').innerHTML + " awesome!";
-      }
+        //get the btn
+        document.getElementById('myButton2').onclick = function () {
+          // get paragraph 2 and set it equal to + awesome!
+          document.getElementById('thirdParagraph').innerHTML = "I think " + document.getElementById('thirdParagraph').innerHTML + " awesome!";
+        }
 
-      //get the btn
-      document.getElementById('createParagraph').onclick = function () {
-        // show text
-        document.getElementById('emptyParagraph').innerHTML = "<h1>Hi There!</h1>"
-      }
-    </script>
-  </div>
+        //get the btn
+        document.getElementById('createParagraph').onclick = function () {
+          // show text
+          document.getElementById('emptyParagraph').innerHTML = "<h1>Hi There!</h1>"
+        }
+      </script>
+    </div>
 
-  <!-- Lecture  4 -->
-  <div>
-    <h1>Lecture 4 - Responding to a click</h1>
-    <p>Responding to a click means real interactivity</p>
-    <p>Challenge 1. Select button by id. document.getElementById('myButton');</p>
-    <p>Now we want to connect JS to this button. use .onclick then a function</p>
-    <p>Challenge 2. alert button clicked. just put alert('button clicked!'); in the function.</p>
-    <p id="textL4" class="paraColor">Hello World</p>
-    <p>Challenge 3, change hello world text above to Hello Dom!. Just added document.getElementById('text').innerHTML = "Hello
-      Dom!"; to the function. </p>
+    <!-- Lecture  4 -->
+    <div>
+      <h1>Lecture 4 - Responding to a click</h1>
+      <p>Responding to a click means real interactivity</p>
+      <p>Challenge 1. Select button by id. document.getElementById('myButton');</p>
+      <p>Now we want to connect JS to this button. use .onclick then a function</p>
+      <p>Challenge 2. alert button clicked. just put alert('button clicked!'); in the function.</p>
+      <p id="textL4" class="paraColor">Hello World</p>
+      <p>Challenge 3, change hello world text above to Hello Dom!. Just added document.getElementById('text').innerHTML =
+        "Hello Dom!"; to the function. </p>
 
-    <button id="myButton">Change Text</button>
+      <button id="myButton">Change Text</button>
 
-    <script>
-      document.getElementById('myButton').onclick = function () {
-        document.getElementById('textL4').innerHTML = "Hello Dom!";
-      }
-    </script>
-  </div>
+      <script>
+        document.getElementById('myButton').onclick = function () {
+          document.getElementById('textL4').innerHTML = "Hello Dom!";
+        }
+      </script>
+    </div>
 
-  <!-- Lecture 3 -->
-  <div>
-    <h1>Lecture 3 - Accessing Elements on the page</h1>
-    <p>So far we've been just alerting to the screen.</p>
-    <p>it's easy to get an element by id as they are unique.</p>
-    <p>the p below't text has changed on page load. Used following code.</p>
-    <p> document.getElementById("text").innerHTML = "Now there is some content";</p>
-    <p id="text">This was blank.</p>
-    <script>
-      // look for something inside the document then . to go inside.
-      document.getElementById("text").innerHTML = "Now there is some content";
-    </script>
-  </div>
+    <!-- Lecture 3 -->
+    <div>
+      <h1>Lecture 3 - Accessing Elements on the page</h1>
+      <p>So far we've been just alerting to the screen.</p>
+      <p>it's easy to get an element by id as they are unique.</p>
+      <p>the p below't text has changed on page load. Used following code.</p>
+      <p> document.getElementById("text").innerHTML = "Now there is some content";</p>
+      <p id="text">This was blank.</p>
+      <script>
+        // look for something inside the document then . to go inside.
+        document.getElementById("text").innerHTML = "Now there is some content";
+      </script>
+    </div>
 
-  <!-- Lecture 2 -->
-  <div>
-    <h1>Lecture 2 - Internal JS</h1>
-    <p>Add Js using script tags in the body, right at the end of the document above closing body tag. It can then run once
-      the whole page has loaded, not interrupting page load.</p>
-    <p>Challenge 1. Just alert('Page loaded') when you refresh.</p>
-    <p>So added alert('The Page has loaded'); between the script tags.</p>
-    <h3>Single or double quotes?</h3>
-    <p>Use double on outer code and single inside.</p>
-    <!-- <script>
+    <!-- Lecture 2 -->
+    <div>
+      <h1>Lecture 2 - Internal JS</h1>
+      <p>Add Js using script tags in the body, right at the end of the document above closing body tag. It can then run once
+        the whole page has loaded, not interrupting page load.</p>
+      <p>Challenge 1. Just alert('Page loaded') when you refresh.</p>
+      <p>So added alert('The Page has loaded'); between the script tags.</p>
+      <h3>Single or double quotes?</h3>
+      <p>Use double on outer code and single inside.</p>
+      <!-- <script>
       alert('The Page has loaded');
     </script> -->
-  </div>
+    </div>
 
-  <!-- Lecture 1 -->
-  <div>
-    <h1>Lecture One - Inline JS</h1>
-    <p>This is just an example don't use JS like this -- NOT RECOMMENDED. We add onclick="alert('Hi Dom')" to the button
-      tag to alert Hi Dom</p>
-    <p>
-      <button onclick="alert('Hi Dom')">Click Me!</button>
-    </p>
-  </div>
+    <!-- Lecture 1 -->
+    <div>
+      <h1>Lecture One - Inline JS</h1>
+      <p>This is just an example don't use JS like this -- NOT RECOMMENDED. We add onclick="alert('Hi Dom')" to the button
+        tag to alert Hi Dom</p>
+      <p>
+        <button onclick="alert('Hi Dom')">Click Me!</button>
+      </p>
+    </div>
 
 </body>
 
