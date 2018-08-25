@@ -11,26 +11,13 @@
 </head>
 
 <body>
+
+  <a href="index.html">Home</a>
+  <br>
+  <p><span id="timeTaken"></span> </p>
   <div id="shape"></div>
 
 
-  <h1></h1>
-  <p><span id="timeTaken"></span> </p>
-
-
-  <h3>Project breakdown</h3>
-  <ol>
-    <li>Make a shape</li>
-    <li>When click on it, it disappears</li>
-    <li>Create a timer that lets you know how long it took you to click the shape.</li>
-    <li>Create a paragraph for the timer after testing with alert.</li>
-    <li>Make shape appear after certain number of seconds</li>
-    <li>Make shape appear after random number of seconds</li>
-    <li>Make shape appear again, after it was clicked.</li>
-    <li>Move the square around randomly using positioning.</li>
-    <li>Make the square randomly change size.</li>
-    <li>Make the square randomly change color. Generate random HTML color code</li>
-  </ol>
   <script>
     // can be used in the function, but var inside a function can't be used outside
     var start = new Date().getTime();
@@ -49,6 +36,13 @@
       var top = Math.random() * 400;
       var left = Math.random() * 400;
       var width = Math.random() * 300;
+      // make shape a circle 50% of time
+      if (Math.random() > 0.5) {
+        // make a circle
+        document.getElementById('shape').style.borderRadius = "50%";
+      } else {
+        document.getElementById('shape').style.borderRadius = "0";
+      }
 
       document.getElementById('shape').style.backgroundColor = getRandomColor();
       document.getElementById('shape').style.width = width + "px";
@@ -68,18 +62,12 @@
     appearAfterDelay();
 
     document.getElementById('shape').onclick = function () {
-
       document.getElementById('shape').style.display = "none";
-
       var end = new Date().getTime();
-
       // divide ms by 1000 to get seconds
       var timeTaken = (end - start) / 1000;
-
       // alert(timeTaken);  great for testing
-
       document.getElementById('timeTaken').innerHTML = timeTaken + "seconds";
-
       appearAfterDelay();
     }
 
