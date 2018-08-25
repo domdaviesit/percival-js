@@ -15,7 +15,86 @@
   <div>
     <h1>Lecture 14 Functions</h1>
     <p>A chunck of code which runs at certain times. eg when a button is clicked.</p>
-    <p></p>
+    <p>2 steps</p>
+    <ol>
+      <li>Define the function</li>
+      <li>run the command (name of the funciton)</li>
+    </ol>
+    <p>Collect code in a function and call that again and again, rather than copying and pasting lots of code.</p>
+    <p>If you run same command more than onece .. put it in a function.</p>
+    <p>Functions help...</p>
+    <ul>
+      <li>Better organised</li>
+      <li>Easily updatable</li>
+      <li>Easier to read</li>
+    </ul>
+
+    <p>How many fingers are you holding up?</p>
+    <p><select id="myNumber">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button id="guess">Guess!</button>
+    </p>
+    <script>
+      // function alertMe() {
+      //   alert("Hi there Dom");
+      // }
+
+      // alertMe();
+
+
+      // Example 2
+      // var x = 5;
+      //   var y = 10;
+
+      //   (x + y) / 2;
+      // whats the average?
+      // function average(a, b) {
+      // if we want result must add keyword return and outer brackets
+      //   return ((a + b) / 2);
+      // }
+      // var x = 5;
+      // var y = 10;
+
+      // alert(average(x, y));
+      function doAGuess(correctAnswer) {
+        var guess = Math.random();
+        guess = guess * 6;
+
+        guess = Math.floor(guess);
+
+        if (guess == correctAnswer) {
+          return (true);
+        } else {
+          return (false);
+        }
+      }
+
+      // grab the btn
+      document.getElementById('guess').onclick = function () {
+        // get input and store it
+        var myNumber = document.getElementById('myNumber').value;
+        // alert(myNumber); (test)
+        var gotIt = false;
+        // loop
+        var numberOfGuesses = 1;
+
+        while (gotIt == false) {
+          if (doAGuess() == true) {
+            gotIt = true;
+
+            alert("Got it! It was a " + myNumber + ", it took me " + numberOfGuesses + " guesses.")
+          } else {
+            numberOfGuesses++;
+          }
+        }
+      }
+
+    </script>
   </div>
 
 
