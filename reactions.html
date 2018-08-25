@@ -15,14 +15,15 @@
 
 
   <h1></h1>
+  <p><span id="timeTaken"></span> </p>
 
 
   <h3>Project breakdown</h3>
   <ol>
     <li>Make a shape</li>
     <li>When click on it, it disappears</li>
-    <li></li>
-    <li></li>
+    <li>Create a timer that lets you know how long it took you to click the shape.</li>
+    <li>Create a paragraph for the timer after testing with alert.</li>
     <li></li>
     <li></li>
     <li></li>
@@ -30,8 +31,18 @@
     <li></li>
   </ol>
   <script>
+    var start = new Date().getTime();
+
     document.getElementById('shape').onclick = function () {
+      var end = new Date().getTime();
       document.getElementById('shape').style.display = "none";
+
+      // divide ms by 1000 to get seconds
+      var timeTaken = (end - start) / 1000;
+
+      // alert(timeTaken);  great for testing
+
+      document.getElementById('timeTaken').innerHTML = timeTaken + "seconds";
     }
 
 
