@@ -28,11 +28,21 @@
     <li>Make shape appear after random number of seconds</li>
     <li>Make shape appear again, after it was clicked.</li>
     <li>Move the square around randomly using positioning.</li>
-    <li></li>
+    <li>Make the square randomly change size.</li>
+    <li>Make the square randomly change color. Generate random HTML color code</li>
   </ol>
   <script>
     // can be used in the function, but var inside a function can't be used outside
     var start = new Date().getTime();
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
     function makeShapeAppear() {
 
@@ -40,6 +50,7 @@
       var left = Math.random() * 400;
       var width = Math.random() * 300;
 
+      document.getElementById('shape').style.backgroundColor = getRandomColor();
       document.getElementById('shape').style.width = width + "px";
       document.getElementById('shape').style.height = width + "px";
       document.getElementById('shape').style.top = top + "px";
