@@ -35,7 +35,8 @@
 
       var top = Math.random() * 400;
       var left = Math.random() * 400;
-      var width = Math.random() * 300;
+      // Fix - shape can be too small to see.AKA give it a minimum size
+      var width = (Math.random() * 300) + 100;
       // make shape a circle 50% of time
       if (Math.random() > 0.5) {
         // make a circle
