@@ -26,7 +26,7 @@
     <li>Create a paragraph for the timer after testing with alert.</li>
     <li>Make shape appear after certain number of seconds</li>
     <li>Make shape appear after random number of seconds</li>
-    <li></li>
+    <li>Make shape appear again, after it was clicked.</li>
     <li></li>
     <li></li>
   </ol>
@@ -40,7 +40,12 @@
       start = new Date().getTime();
     }
 
-    setTimeout(makeShapeAppear, Math.random() * 2000);
+    function appearAfterDelay() {
+      setTimeout(makeShapeAppear, Math.random() * 2000);
+
+    }
+
+    appearAfterDelay();
 
     document.getElementById('shape').onclick = function () {
 
@@ -54,6 +59,8 @@
       // alert(timeTaken);  great for testing
 
       document.getElementById('timeTaken').innerHTML = timeTaken + "seconds";
+
+      appearAfterDelay();
     }
 
 
